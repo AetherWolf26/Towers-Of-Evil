@@ -8,6 +8,8 @@ TagManager:
   - 1 Health
   - Hazard
   - Enemy
+  - Proj
+  - weapon
   layers:
   - Default
   - TransparentFX
