@@ -5,36 +5,51 @@ using TMPro;
 using Unity.VisualScripting;
 public class GameManager : MonoBehaviour
 {
+    PlayerController player;
+
     GameObject weaponUI;
-    GameObject PauseMenu;
-    Image HealthBar;
+    GameObject pauseMenu;
+
+    Image healthBar;
     TextMeshProUGUI ammoCounter;
     TextMeshProUGUI clip;
     TextMeshProUGUI fireMode;
 
     public bool isPaused = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         if (SceneManager.GetActiveScene().buildIndex >= 1)
         {
+            player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
 
-            Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-            HealthBar = GameObject.FindGameObjectWithTag("UI_health").GetComponent<Image>();
-            ammoCounter = GameObject.FindGameObjectWithTag("UI_Ammo").GetComponent<TextMeshProUGUI>();
-            clip = GameObject.FindGameObjectWithTag("UI_Clip").GetComponent<TextMeshProUGUI>();
+            weaponUI = GameObject.FindGameObjectWithTag("weaponUI");
+            pauseMenu = GameObject.FindGameObjectWithTag("ui_pause");
+
+            pauseMenu.SetActive(false);
+
+            healthBar = GameObject.FindGameObjectWithTag("ui_health").GetComponent<Image>();
+            ammoCounter = GameObject.FindGameObjectWithTag("ui_ammo").GetComponent<TextMeshProUGUI>();
+            clip = GameObject.FindGameObjectWithTag("ui_clip").GetComponent<TextMeshProUGUI>();
+            fireMode = GameObject.FindGameObjectWithTag("ui_fireMode").GetComponent<TextMeshProUGUI>();
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        HealthBar.fillAmount = (float) Player.health / (float) Player.maxHealth;
-        if (Player.currentWeapon  != null )
+        if (SceneManager.GetActiveScene().buildIndex >= 1)
         {
-            ammoCounter.text = "Ammo: " + Player.currentWeapon.ammo;
-            clip.text = "Clip: " + Player.currentWeapon.clip + " / " + Player.currentWeapon.clipSize;
+            healthBar.fillAmount = (float)player.health / (float)player.maxHealth;
 
+            if (player.currentWeapon != null)
+            {
+                weaponUI.SetActive(true);
+
+                ammoCounter.text = "Ammo: " + player.currentWeapon.ammo;
+                clip.text = "Clip: " + player.currentWeapon.clip + " / " + player.currentWeapon.clipSize;
+            }
         }
     }
 
@@ -43,25 +58,30 @@ public class GameManager : MonoBehaviour
         if (!isPaused)
         {
             isPaused = true;
-            isPaused = true;
-            PauseMenu.SetActive(true);
+
+            pauseMenu.SetActive(true);
+
             Time.timeScale = 0;
+
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
+
         else
             Resume();
     }
     public void Resume()
     {
-        if (!isPaused)
+        if (isPaused)
         {
-            isPaused = true;
-            isPaused = true;
-            PauseMenu.SetActive(true);
-            Time.timeScale = 0;
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            isPaused = false;
+
+            pauseMenu.SetActive(false);
+
+            Time.timeScale = 1;
+
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
     }
     public void LoadLevel(int level)
