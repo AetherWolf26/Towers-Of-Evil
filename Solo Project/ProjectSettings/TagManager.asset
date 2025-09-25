@@ -10,6 +10,9 @@ TagManager:
   - Enemy
   - Proj
   - weapon
+  - UI_Health
+  - UI_Ammo
+  - UI_Clip
   layers:
   - Default
   - TransparentFX
