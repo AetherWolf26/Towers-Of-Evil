@@ -13,6 +13,10 @@ TagManager:
   - UI_Health
   - UI_Ammo
   - UI_Clip
+  - Title
+  - Start
+  - Quite
+  - UI_MainMenu
   layers:
   - Default
   - TransparentFX
