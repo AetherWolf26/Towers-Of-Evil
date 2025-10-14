@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     PlayerController player;
 
-    GameObject weaponUI;
+    GameObject weaponUI; 
     GameObject pauseMenu;
 
     Image healthBar;

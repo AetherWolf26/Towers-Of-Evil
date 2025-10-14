@@ -148,11 +148,16 @@ public class PlayerController : MonoBehaviour
         {
             health = 0;
         }
-        
-        if ((other.tag == "health") && (health < maxHealth))
+
+        if ((other.tag == "1 Health") && (health < maxHealth))
         {
             health++;
+            other.gameObject.SetActive(true);
+        }
+        else
+        {
             other.gameObject.SetActive(false);
+
         }
     }
     private void OnCollisionEnter(Collision collision)
