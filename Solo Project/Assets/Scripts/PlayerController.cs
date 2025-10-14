@@ -157,7 +157,11 @@ public class PlayerController : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "hazard")
+        if(collision.gameObject.tag == "Hazard")
+        {
+            health--;
+        }
+        if (collision.gameObject.tag == "Enemy")
         {
             health--;
         }

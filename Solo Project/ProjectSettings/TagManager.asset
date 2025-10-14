@@ -17,6 +17,10 @@ TagManager:
   - Start
   - Quite
   - UI_MainMenu
+  - UI_Pause
+  - UI_Resume
+  - UI_Quite
+  - UI_Quit
   layers:
   - Default
   - TransparentFX
