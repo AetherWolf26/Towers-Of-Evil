@@ -142,30 +142,23 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(transform.up * jumpHeight, ForceMode.Impulse);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.tag == "killzone")
+        if (collision.gameObject.tag == "killzone")
         {
             health = 0;
         }
 
-        if ((other.tag == "1 Health") && (health < maxHealth))
+        if ((collision.gameObject.tag == "1 Health") && (health < maxHealth))
         {
             health++;
-            other.gameObject.SetActive(true);
         }
-        else
-        {
-            other.gameObject.SetActive(false);
-
-        }
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
+        
         if(collision.gameObject.tag == "Hazard")
         {
             health--;
         }
+        
         if (collision.gameObject.tag == "Enemy")
         {
             health--;

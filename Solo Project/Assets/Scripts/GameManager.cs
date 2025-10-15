@@ -5,10 +5,14 @@ using TMPro;
 using Unity.VisualScripting;
 public class GameManager : MonoBehaviour
 {
+
     PlayerController player;
 
     GameObject weaponUI; 
     GameObject pauseMenu;
+    Button resume;
+    Button mainMeu;
+    Button quitGame;
 
     Image healthBar;
     TextMeshProUGUI ammoCounter;
@@ -25,7 +29,10 @@ public class GameManager : MonoBehaviour
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
 
             weaponUI = GameObject.FindGameObjectWithTag("weaponUI");
-            pauseMenu = GameObject.FindGameObjectWithTag("ui_pause");
+            pauseMenu = GameObject.FindGameObjectWithTag("UI_Pause");
+            resume = GameObject.FindGameObjectWithTag("UI_Resume").GetComponent<Button>();
+            mainMeu = GameObject.FindGameObjectWithTag("UI_MainMenu").GetComponent<Button>();
+            quitGame = GameObject.FindGameObjectWithTag("UI_Quit").GetComponent<Button>();
 
             pauseMenu.SetActive(false);
 
@@ -61,6 +68,7 @@ public class GameManager : MonoBehaviour
 
             pauseMenu.SetActive(true);
 
+
             Time.timeScale = 0;
 
             Cursor.lockState = CursorLockMode.None;
@@ -83,6 +91,8 @@ public class GameManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
+        else
+            Pause();
     }
     public void LoadLevel(int level)
     {
