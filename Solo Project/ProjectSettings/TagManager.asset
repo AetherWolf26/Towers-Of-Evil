@@ -21,6 +21,8 @@ TagManager:
   - UI_Resume
   - UI_Quite
   - UI_Quit
+  - weaponUI
+  - ui_fireMode
   layers:
   - Default
   - TransparentFX
