@@ -36,9 +36,9 @@ public class GameManager : MonoBehaviour
 
             pauseMenu.SetActive(false);
 
-            healthBar = GameObject.FindGameObjectWithTag("ui_health").GetComponent<Image>();
-            ammoCounter = GameObject.FindGameObjectWithTag("ui_ammo").GetComponent<TextMeshProUGUI>();
-            clip = GameObject.FindGameObjectWithTag("ui_clip").GetComponent<TextMeshProUGUI>();
+            healthBar = GameObject.FindGameObjectWithTag("UI_Health").GetComponent<Image>();
+            ammoCounter = GameObject.FindGameObjectWithTag("UI_Ammo").GetComponent<TextMeshProUGUI>();
+            clip = GameObject.FindGameObjectWithTag("UI_Clip").GetComponent<TextMeshProUGUI>();
             fireMode = GameObject.FindGameObjectWithTag("ui_fireMode").GetComponent<TextMeshProUGUI>();
         }
     }
@@ -67,7 +67,6 @@ public class GameManager : MonoBehaviour
             isPaused = true;
 
             pauseMenu.SetActive(true);
-
 
             Time.timeScale = 0;
 
