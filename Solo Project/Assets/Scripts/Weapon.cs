@@ -11,12 +11,15 @@ public class Weapon : MonoBehaviour
     public Transform firePoint;
     public Camera firingDirection;
 
+    Animator gunAnim;
+
     [Header("Meta Attributes")]
     public bool canFire = true;
     public bool holdToAttack = true;
     public bool reloading = false;
     public int weaponID;
     public string weaponName;
+    public bool isFiring = false;
 
     [Header("Weapon Stats")]
     public float projLifespan;
@@ -33,11 +36,11 @@ public class Weapon : MonoBehaviour
     public int maxAmmo;
     public int ammoRefill;
 
-
     void Start()
     {
         weaponSpeaker = GetComponent<AudioSource>();
         firePoint = transform.GetChild(0);
+        gunAnim = GetComponent<Animator>();
     }
 
     public void fire()
