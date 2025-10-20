@@ -1,4 +1,5 @@
 using System.Collections;
+using System.ComponentModel.Design;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
@@ -11,7 +12,7 @@ public class Weapon : MonoBehaviour
     public Transform firePoint;
     public Camera firingDirection;
 
-    Animator gunAnim;
+    Animator myAnim;
 
     [Header("Meta Attributes")]
     public bool canFire = true;
@@ -19,7 +20,6 @@ public class Weapon : MonoBehaviour
     public bool reloading = false;
     public int weaponID;
     public string weaponName;
-    public bool isFiring = false;
 
     [Header("Weapon Stats")]
     public float projLifespan;
@@ -38,9 +38,9 @@ public class Weapon : MonoBehaviour
 
     void Start()
     {
+        myAnim = GetComponent<Animator>();
         weaponSpeaker = GetComponent<AudioSource>();
         firePoint = transform.GetChild(0);
-        gunAnim = GetComponent<Animator>();
     }
 
     public void fire()

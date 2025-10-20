@@ -599,10 +599,10 @@ MonoBehaviour:
   reloading: 0
   weaponID: 0
   weaponName: 
-  projLifespan: 5
+  projLifespan: 100
   projVelocity: 1000
   reloadCooldown: 1
-  rof: 0
+  rof: 1
   fireModes: 0
   currentFireMode: 0
   clip: 100
@@ -631,7 +631,7 @@ MonoBehaviour:
   reloading: 0
   weaponID: 0
   weaponName: 
-  projLifespan: 5
+  projLifespan: 100
   projVelocity: 1000
   reloadCooldown: 1
   rof: 1
@@ -663,28 +663,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0000008, y: 2.5, z: 4.0000005}
   m_Center: {x: 0.00000008940696, y: -0.7499997, z: 0.49999985}
---- !u!95 &112807291
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 112807287}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8f214ccc50191f444bc7060cb94537e1, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!54 &112807292
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -707,7 +685,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
@@ -814,6 +792,42 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &112807300
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112807287}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4dc8176d30cfb3946807e37ab4f4ee5d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &112807303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112807287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e644c9e6dbd2e92499ba243c42d72c0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunAnimator: {fileID: 112807300}
+  isGunEquipped: 1
 --- !u!1 &124192212
 GameObject:
   m_ObjectHideFlags: 0
@@ -4834,9 +4848,6 @@ PrefabInstance:
       addedObject: {fileID: 112807292}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eefef33b62c56a549adad4f55652109f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 112807291}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eefef33b62c56a549adad4f55652109f, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 112807290}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eefef33b62c56a549adad4f55652109f, type: 3}
       insertIndex: -1
@@ -4847,6 +4858,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eefef33b62c56a549adad4f55652109f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 112807296}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eefef33b62c56a549adad4f55652109f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 112807300}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eefef33b62c56a549adad4f55652109f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 112807303}
   m_SourcePrefab: {fileID: 100100000, guid: eefef33b62c56a549adad4f55652109f, type: 3}
 --- !u!1 &1636284224
 GameObject:
