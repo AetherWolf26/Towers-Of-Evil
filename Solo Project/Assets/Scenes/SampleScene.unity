@@ -792,42 +792,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &112807300
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 112807287}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4dc8176d30cfb3946807e37ab4f4ee5d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &112807303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 112807287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e644c9e6dbd2e92499ba243c42d72c0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gunAnimator: {fileID: 112807300}
-  isGunEquipped: 1
 --- !u!1 &124192212
 GameObject:
   m_ObjectHideFlags: 0
@@ -3003,6 +2967,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37f9e41e0d266cb48879f515cfa82bbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFollowing: 0
+  health: 5
+  maxHealth: 5
 --- !u!54 &858124815
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4858,12 +4825,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eefef33b62c56a549adad4f55652109f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 112807296}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eefef33b62c56a549adad4f55652109f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 112807300}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eefef33b62c56a549adad4f55652109f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 112807303}
   m_SourcePrefab: {fileID: 100100000, guid: eefef33b62c56a549adad4f55652109f, type: 3}
 --- !u!1 &1636284224
 GameObject:
